@@ -121,8 +121,8 @@ Google Maps and Alerts
 • Safe route visualization  
 
 ---
-
-# 🖼 Project Screenshots
+```
+# Project Screenshots
 
 ## 🔐 Admin Login
 ![Admin Login](assets/admin_login.png)
