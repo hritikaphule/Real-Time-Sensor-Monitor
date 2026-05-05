@@ -1,45 +1,75 @@
-# 🚦 Smart Road Condition Monitoring System
+# Real-Time Sensor Monitor
 
-An end-to-end IoT-based intelligent road safety monitoring platform designed to detect and visualize hazardous road conditions such as **ice, snow, and dry asphalt** in real time.
+A real-time road condition monitoring system built using IoT sensors, LoRa communication, ASP.NET Core, SQL Server, and a web dashboard. The system collects sensor readings from a road-surface monitoring device, processes the data through a backend API, stores it in a database, and displays road condition insights on a dashboard.
 
----
+## Overview
 
-## 📌 Problem
+This project monitors road surface conditions such as snow, ice, and asphalt using real-time sensor data. The goal is to detect unsafe road conditions by using actual sensor readings instead of relying only on weather APIs.
 
-Traditional weather APIs provide atmospheric forecasts but do not directly measure real-time **road surface conditions**. This limitation can result in undetected ice or snow hazards, increasing accident risk.
+The system uses hardware sensors to collect temperature, humidity, and spectral data. These readings are transmitted using LoRa communication and processed by an ASP.NET Core backend. The dashboard displays live sensor readings, risk levels, graphs, alerts, and map-based road condition information.
 
----
+## Features
 
-## 💡 Solution
+- Real-time sensor data monitoring
+- Road condition detection for snow, ice, and asphalt
+- LoRa-based sensor communication
+- ASP.NET Core backend
+- SQL Server database integration
+- REST API-based data processing
+- Admin login
+- Add and manage sensor devices
+- View sensor readings
+- Dashboard with graphs and risk indicators
+- Google Maps integration
+- Hazard alerts for unsafe road conditions
+- Safe route finder
 
-This system integrates:
+## Tech Stack
 
-• Embedded spectral & thermal sensing  
-• Long-range LoRa communication  
-• ASP.NET Core Web API backend  
-• SQL Server database  
-• Real-time dashboard visualization  
-• Google Maps hazard alerts & route safety analysis  
+### Backend
 
-The platform detects surface type, assigns risk levels, and visually alerts users when hazardous conditions are present.
+- C#
+- ASP.NET Core
+- REST API
+- Entity Framework Core
+- SQL Server
 
----
+### Frontend
 
-# 🏗 System Architecture
+- HTML
+- CSS
+- JavaScript
 
-```
-IoT Sensor Node 
-   ↓
-LoRa (REYAX RYLR998)
-   ↓
-ASP.NET Core Web API
-   ↓
+### IoT and Hardware
+
+- Raspberry Pi Pico W
+- MicroPython
+- MLX90614 infrared temperature sensor
+- DHT22 temperature and humidity sensor
+- AS7343 spectral sensor
+- REYAX RYLR998 LoRa module
+
+### APIs
+
+- Google Maps API
+- Weather API
+
+## System Flow
+
+```text
+Sensors
+  ↓
+Raspberry Pi Pico W
+  ↓
+LoRa Communication
+  ↓
+ASP.NET Core Backend
+  ↓
 SQL Server Database
-   ↓
-Web Dashboard + Google Maps API
-```
-
----
+  ↓
+Web Dashboard
+  ↓
+Google Maps and Alerts
 
 # 🔌 Hardware Layer
 
@@ -156,41 +186,130 @@ Shows successful detection of dry asphalt conditions using VIS mean, NIR ratio, 
 Illustrates hazardous ice detection triggered by low surface temperature and spectral reflectivity characteristics. The detected condition is transmitted over LoRa, persisted in the database, and immediately reflected in the dashboard with updated risk indicators and route hazard alerts.
 
 ---
+```
+## Setup Instructions
 
-# 🛠 Technologies Used
+### 1. Clone the Repository
 
-C#  
-ASP.NET Core  
-Entity Framework Core  
-SQL Server  
-Raspberry Pi Pico W  
-MicroPython  
-LoRa (REYAX RYLR998)  
-Google Maps API  
-WeatherAPI  
-RESTful APIs  
-Embedded Systems  
+```bash
+git clone https://github.com/hritikaphule/Real-Time-Sensor-Monitor.git
+cd Real-Time-Sensor-Monitor
+```
+
+### 2. Open the Project
+
+Open the solution file in Visual Studio:
+
+```text
+SmartRoadMonitor.sln
+```
+
+### 3. Install Requirements
+
+Make sure you have the following installed:
+
+- Visual Studio 2022
+- .NET SDK
+- SQL Server
+- SQL Server Management Studio
+- Git
+
+Check the .NET version:
+
+```bash
+dotnet --version
+```
+
+### 4. Restore Dependencies
+
+```bash
+dotnet restore
+```
+
+### 5. Configure Database
+
+Open `appsettings.json` and update the SQL Server connection string.
+
+Example:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=SmartRoadMonitorDB;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+}
+```
+
+If you are using SQL Server username and password:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=SmartRoadMonitorDB;User Id=YOUR_USERNAME;Password=YOUR_PASSWORD;TrustServerCertificate=True;"
+  }
+}
+```
+
+### 6. Run Database Migration
+
+```bash
+dotnet ef database update
+```
+
+If `dotnet ef` is not installed:
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+Then run:
+
+```bash
+dotnet ef database update
+```
+
+### 7. Add API Keys
+
+If Google Maps or Weather API is required, add the keys in `appsettings.json`.
+
+```json
+{
+  "GoogleMaps": {
+    "ApiKey": "YOUR_GOOGLE_MAPS_API_KEY"
+  },
+  "WeatherApi": {
+    "ApiKey": "YOUR_WEATHER_API_KEY"
+  }
+}
+```
+
+Do not commit real API keys to GitHub.
+
+### 8. Run the Application
+
+```bash
+dotnet build
+dotnet run --project SmartRoadMonitor
+```
+
+Or run it directly from Visual Studio.
+
+The app will start on a local URL such as:
+
+```text
+https://localhost:5001
+```
+
+or
+
+```text
+http://localhost:5000
+```
 
 ---
-
-# 🚀 Key Highlights
-
-✔ End-to-end IoT data pipeline  
-✔ Real-time hazard detection  
-✔ Embedded systems + full-stack integration  
-✔ Geospatial route safety analysis  
-✔ Database-driven dashboard  
-✔ Professional admin management interface  
-
----
-
-# 👥 Collaboration
-
-Developed in collaboration with Agamdeep Singh Sandhu.
 
 ---
 
 # 👨‍💻 Author
 
-**Sandip Bohara Chhetri**  
-Computer Engineering Technologist
+**Hritika Phule**  
