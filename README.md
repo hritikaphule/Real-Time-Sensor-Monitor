@@ -1,6 +1,6 @@
 # Real-Time Sensor Monitor
 
-A real-time road condition monitoring system built using IoT sensors, LoRa communication, ASP.NET Core, SQL Server, and a web dashboard. The system collects sensor readings from a road-surface monitoring device, processes the data through a backend API, stores it in a database, and displays road condition insights on a dashboard.
+A real-time road condition monitoring system built using IoT sensors, LoRa communication, C#(.NET) Core, SQL Server, and a web dashboard. The system collects sensor readings from a road-surface monitoring device, processes the data through a backend API, stores it in a database, and displays road condition insights on a dashboard.
 
 ## Overview
 
@@ -13,7 +13,7 @@ The system uses hardware sensors to collect temperature, humidity, and spectral 
 - Real-time sensor data monitoring
 - Road condition detection for snow, ice, and asphalt
 - LoRa-based sensor communication
-- ASP.NET Core backend
+- C#(.NET) Core backend
 - SQL Server database integration
 - REST API-based data processing
 - Admin login
@@ -29,7 +29,6 @@ The system uses hardware sensors to collect temperature, humidity, and spectral 
 ### Backend
 
 - C#
-- ASP.NET Core
 - REST API
 - Entity Framework Core
 - SQL Server
