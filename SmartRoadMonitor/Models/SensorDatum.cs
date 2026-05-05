@@ -5,7 +5,7 @@ namespace SmartRoadMonitor.Models;
 
 public partial class SensorDatum
 {
-    public long DataId { get; set; }
+    public int DataId { get; set; }
 
     public int DeviceId { get; set; }
 
