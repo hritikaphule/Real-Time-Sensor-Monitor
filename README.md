@@ -70,6 +70,7 @@ SQL Server Database
 Web Dashboard
   ↓
 Google Maps and Alerts
+```
 
 # 🔌 Hardware Layer
 
@@ -121,7 +122,8 @@ Google Maps and Alerts
 • Safe route visualization  
 
 ---
-```
+
+``
 # Project Screenshots
 
 ## 🔐 Admin Login
@@ -305,10 +307,6 @@ or
 ```text
 http://localhost:5000
 ```
-
----
-
----
 
 # 👨‍💻 Author
 
