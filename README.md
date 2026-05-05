@@ -6,7 +6,7 @@ A real-time road condition monitoring system built using IoT sensors, LoRa commu
 
 This project monitors road surface conditions such as snow, ice, and asphalt using real-time sensor data. The goal is to detect unsafe road conditions by using actual sensor readings instead of relying only on weather APIs.
 
-The system uses hardware sensors to collect temperature, humidity, and spectral data. These readings are transmitted using LoRa communication and processed by an ASP.NET Core backend. The dashboard displays live sensor readings, risk levels, graphs, alerts, and map-based road condition information.
+The system uses hardware sensors to collect temperature, humidity, and spectral data. These readings are transmitted using LoRa communication and processed by an C# Core backend. The dashboard displays live sensor readings, risk levels, graphs, alerts, and map-based road condition information.
 
 ## Features
 
